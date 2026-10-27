@@ -21,7 +21,7 @@
 - WSS certificates/server are not implemented. Local HTTP + WS is the supported bridge path; HTTPS + insecure WS is rejected by the UI.
 - GitHub API access initially returned `Forbidden`, then recovered. Branch `feat/orchestra-mvp` was pushed and PR #1 created. Remote CI passed its install/lint/unit/build steps; final remote outcome is recorded in the delivery report.
 - Pages enablement API returned `403 Resource not accessible by integration`. A repository administrator must select Settings → Pages → Source: GitHub Actions before deployment can succeed.
-- Public-site HTTPS fetch initially failed through policy and later returned HTTP 404 (Pages not enabled). A Chromium attempt through the proxy reports an untrusted certificate. Adding the environment proxy CA to the browser trust store was rejected by automatic approval review; no trust-store change or TLS-verification bypass was performed. Published DEMO is not verified.
+- Public-site HTTPS fetch initially failed through policy and later returned HTTP 404 (Pages not enabled). A Chromium attempt through the proxy reports an untrusted certificate. The initial CA registration was rejected by automatic approval review. After explicit user approval, certutil registration completed successfully, but Chromium still reports an untrusted certificate. TLS verification remains enabled. Published DEMO is not verified.
 - Browser download from `cdn.playwright.dev` was blocked; system Chromium was used successfully for local tests.
 
 ## Deliberate MVP limits
