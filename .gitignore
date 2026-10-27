@@ -17,3 +17,9 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Test artifacts and Python environments
+playwright-report/
+test-results/
+__pycache__/
+.venv/
